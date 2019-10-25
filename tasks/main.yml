@@ -1,12 +1,4 @@
 ---
-# tasks file for ansible-role-redhat_repo
-
-- name: Install extra packages
-  yum:
-    name: "{{ redhat_repo_extra_packages }}"
-    state: present
-  when: ansible_os_family == 'RedHat'
-
 - name: Install repositories
   yum_repository:
     async: "{{ item.value.async | default(omit) }}"

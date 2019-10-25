@@ -11,7 +11,6 @@ None
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `redhat_repo` | a dict of repositories (see below) | {} |
-| `redhat_repo_extra_packages` | a list of additional packages to install | [] |
 
 Created by
 [yaml2readme.rb](https://gist.github.com/trombik/b2df709657c08d845b1d3b3916e592d3)
@@ -33,8 +32,6 @@ None
   roles:
     - ansible-role-redhat_repo
   vars:
-    redhat_repo_extra_packages:
-      - epel-release
     redhat_repo:
       epel:
         mirrorlist: "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-{{ ansible_distribution_major_version }}&arch={{ ansible_architecture }}"
